@@ -12,34 +12,56 @@
     <title>Crud PHP y MYSQL</title>
   </head>
   <body>
-    <div class="container">
-      <br>
+
+  <div class="container mt-5">
       <h1>Simple CRUD en PHP y MYSQL</h1>
+      <p>
+  <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Crear Empleado
+  </a>
+  </p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
   <div class="row">
     <div class="col-md-4">
       <form class="" action="registro.php" method="post">
         <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="text" class="form-control" name="usuario"  placeholder="Enter email">
+          <label>Nombre</label>
+          <input type="text" class="form-control" name="usuario"  placeholder="Ex: John Doe">
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" name="contrasena" placeholder="Password">
+          <label>Email</label>
+          <input type="text" class="form-control" name="email" placeholder="usuario@mail.com">
         </div>
-        <button type="submit" class="btn btn-primary" name="insertar">Submit</button>
+        <div class="form-group">
+          <label>Puesto</label>
+          <input type="text" class="form-control" name="puesto" placeholder="Ing. en Sistemas">
+        </div>
+        <div class="form-group">
+          <label>Fono</label>
+          <input type="text" class="form-control" name="fono" placeholder="912345678">
+        </div>
+        <div class="form-group">
+          <label>Direccion</label>
+          <input type="text" class="form-control" name="direccion" placeholder="Av calle 1234">
+        </div>
+        <button type="submit" class="btn btn-primary" name="insertar">Registrar</button>
       </form>
     </div>
   </div>
-  <br><br>
-  <div class="col-md-8 col-md-offset-2">
-  <h3>Mostrar registros</h3>
+  </div>
+</div>
+  <div class="col-md-12 col-md-offset-2">
+  <h3>Lista de Empleados</h3>
     <table class="table table-bordered table-responsive">
       <tr>
         <td>ID</td>
-  			<td>Usuario</td>
-  			<td>Password</td>
-  			<td>Editar</td>
-        <td>Eliminar</td>
+  			<td>Nombre</td>
+  			<td>Email</td>
+        <td>Puesto</td>
+        <td>Fono</td>
+  			<td>Dirección</td>
+        <td>Acción</td>
       </tr>
 
 <!-- Mostrar datos en la tabla mediante php -->
@@ -55,22 +77,34 @@ $i = 0;
 while ($fila = mysqli_fetch_array( $resultado ))
 {
 $id = $fila['id'];
-$usuario = $fila['nombre'];
-$password = $fila['contrasena'];
+$nombre = $fila['nombre'];
+$email = $fila['email'];
+$puesto = $fila['puesto'];
+$fono = $fila['fono'];
+$direccion = $fila['direccion'];
 // $i++;
 
  ?>
 
       <tr>
         <td><?php echo $id; ?> </td>
-  			<td><?php echo $usuario; ?></td>
-  			<td><?php echo $password; ?></td>
-  			<td><a href="editar.php?editar=<?php echo $id ?>" class="float-center ml-2"><i class="fas fa-edit"></i></a></td>
-        <td><a href="eliminar.php?eliminar=<?php echo $id ?>" class="float-center ml-2"><i class="fas fa-trash"></i></a></td>
+  			<td><?php echo $nombre; ?></td>
+  			<td><?php echo $email; ?></td>
+        <td><?php echo $puesto; ?></td>
+        <td><?php echo $fono; ?></td>
+        <td><?php echo $direccion; ?></td>
+
+  			<td><a href="editar.php?editar=<?php echo $id ?>" class="float-center ml-2"><i class="fas fa-pen" style="color:#FFC107"></i></a>&nbsp;&nbsp;<a href="eliminar.php?eliminar=<?php echo $id ?>" class="float-center ml-2"><i class="fas fa-trash" style="color:#F44336"></i></a>&nbsp;&nbsp;<a href="info.php?ver=<?php echo $id ?>" class="float-center ml-2"><i class="fas fa-eye"></i></a></td>
       </tr>
 <?php }  ?>
     </table>
   </div>
 </div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>

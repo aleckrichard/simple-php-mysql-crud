@@ -8,8 +8,11 @@ if (isset($_GET['editar'])) {
   $fila = mysqli_fetch_array($ejecutar);
 
   $id = $fila['id'];
-  $usuario = $fila['nombre'];
-  $password = $fila['contrasena'];
+  $nombre = $fila['nombre'];
+  $email = $fila['email'];
+  $puesto = $fila['puesto'];
+  $fono = $fila['fono'];
+  $direccion = $fila['direccion'];
 }
 
  ?>
@@ -26,22 +29,29 @@ if (isset($_GET['editar'])) {
  <title>Hello, world!</title>
 </head>
    <body>
-
-     <div class="content">
+     <div class="container mt-5">
        <div class="row">
-         <div class="col-md-1">
-
-         </div>
-         <div class="col-md-8">
+          <div class="col-md-12">
            <form class="" action="" method="post">
              <div class="form-group">
-         <label for="exampleInputEmail1">Email address</label>
-         <input type="text" class="form-control" name="nombre"  value="<?php echo $usuario; ?>">
-         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+         <label>Nombre</label>
+         <input type="text" class="form-control" name="nombre"  value="<?php echo $nombre; ?>">
+         </div>
+       <div class="form-group">
+         <label>Email</label>
+         <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
        </div>
        <div class="form-group">
-         <label for="exampleInputPassword1">Password</label>
-         <input type="text" class="form-control" name="contrasena" value="<?php echo $password; ?>">
+         <label>Puesto</label>
+         <input type="text" class="form-control" name="puesto" value="<?php echo $puesto; ?>">
+       </div>
+       <div class="form-group">
+         <label>Fono</label>
+         <input type="text" class="form-control" name="fono" value="<?php echo $fono; ?>">
+       </div>
+       <div class="form-group">
+         <label>Direccion</label>
+         <input type="text" class="form-control" name="direccion" value="<?php echo $direccion; ?>">
        </div>
        <button type="submit" class="btn btn-primary" name="actualizar">Actualizar Datos</button>
 
@@ -51,11 +61,15 @@ if (isset($_GET['editar'])) {
 
 <?php
 if (isset($_POST['actualizar'])) {
+  //SI al hacer click en el boton "actualizar", entonces mandar los datos de los campos por POST a la BD
   $actualizar_nombre = $_POST['nombre'];
-  $actualizar_password = $_POST['contrasena'];
+  $actualizar_email = $_POST['email'];
+  $actualizar_puesto = $_POST['puesto'];
+  $actualizar_fono = $_POST['fono'];
+  $actualizar_direccion = $_POST['direccion'];
 
 
-  $sql_actualizar = "UPDATE usuarios SET nombre='$actualizar_nombre', contrasena='$actualizar_password' WHERE id=$editar_id";
+  $sql_actualizar = "UPDATE usuarios SET nombre='$actualizar_nombre', email='$actualizar_email', puesto='$actualizar_puesto', fono=$actualizar_fono, direccion='$actualizar_direccion' WHERE id=$editar_id";
   $ejecutar = mysqli_query( $conectar, $sql_actualizar ) or die ( "Error en la consulta");
 
   if ($ejecutar) {
