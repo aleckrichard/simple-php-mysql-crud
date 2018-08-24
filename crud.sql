@@ -30,7 +30,7 @@ CREATE TABLE `usuarios` (
   `fono` bigint(20) DEFAULT '0',
   `direccion` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (1,'John Doe','usuario@mail.com','Ing en sistemas',912345678,'Av Street 432'),(2,'Juan','juan@mail.cl','Contador',823232323,'Calle 1212');
+INSERT INTO `usuarios` VALUES (6,'qwerty','1234@123.cl','qwerty qwerty',12345434,'qwerty'),(9,'John Doe','alex.alvarado@hotmail.es','Engenheiro',921212221,'Street 1234'),(15,'jdjfafdn','lkalkalsdj@asds.cl','alsdlalsd',921212222,'alsjdljasd'),(16,'Www ett yu','sdfff@gggc','Gghjjgh',666666666,'Jjjjjhhff'),(19,'tgvcrt','tgcddf@wsaaaa','asdasdasd',912345678,'asdfdsds'),(20,'parker','paker@pi.cl','Pi',921212122,'Pi');
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-08-22 23:56:52
+-- Dump completed on 2018-08-23 21:19:16
