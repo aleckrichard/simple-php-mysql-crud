@@ -8,5 +8,5 @@ if (isset($_GET['eliminar'])) {
 
 }
 //redirigir a index
-header('location:form.php');
+header('location:index.php');
  ?>

@@ -32,7 +32,7 @@ if (isset($_GET['ver'])) {
    <body>
    <div class="container mt-5">
    <nav>
-   <div align="right"><a align="right" href="form.php" class="btn btn-primary">Lista de Empleados</a></div>
+   <div align="right"><a align="right" href="index.php" class="btn btn-primary">Lista de Empleados</a></div>
    
    </nav>
    <div class="row">

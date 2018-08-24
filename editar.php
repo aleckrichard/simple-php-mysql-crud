@@ -74,7 +74,7 @@ if (isset($_POST['actualizar'])) {
 
   if ($ejecutar) {
     echo " <script>alert('Datos actualizados')</script> ";
-    echo " <script>window.open('form.php', '_self' )</script> ";
+    echo " <script>window.open('index.php', '_self' )</script> ";
   }
 }
 

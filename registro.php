@@ -18,5 +18,5 @@ if (isset($_POST['insertar'])) {
 
 // mysqli_close($conexion);
 }
-header('location:form.php');
+header('location:index.php');
  ?>
